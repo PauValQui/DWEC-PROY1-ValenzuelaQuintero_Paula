@@ -1,0 +1,409 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* Encabezado */
+header{
+    width: 85%;
+    display:flex;
+    margin: 0 auto;
+    background: linear-gradient(#FFA200, #EC9B0F);
+}
+
+.logo{
+    background: #ffffff;
+    border-radius: 50%;
+    width: 10%;
+    margin: 5px;
+}
+
+.logo a{
+    text-align: center;
+    padding-left: 35px;
+    text-decoration: none;
+}
+
+/*Boton Oscuro*/
+
+.BotonOscuro {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.BotonOscurobutton {
+    background: transparent;
+    color: white;
+    font-family: var(--letra);
+    margin-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding-right: 10px;
+    height: 30px;
+}
+
+.ModoOscuro {
+    background-color: rgb(59, 59, 73);
+    color: white;
+}
+
+.CajaDerecha{
+    display: flex;
+    position: relative;
+    left: 50%;
+    justify-content: space-between;
+    width: 22%;
+}
+
+.FotoCompra{
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+}
+
+.FotoCompra img{
+    width: 50px;
+    height: 40px;
+}
+
+.BotonEntrar{
+    margin-top: 7px;
+    width: 70px;
+    height: 35px;
+    background-color: #EBEBEB;
+    color: black;
+}
+
+.BotonEntrar p{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.DespliegueMenu{
+    width: 45px;
+    height: 45px;
+    
+}
+
+.nav{
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+    font-size: 3em;
+}
+
+.nav, .menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.menu{
+    background: #555;
+    width: 125px;
+    height: 0px;/*0 a 250px*/
+    float: right;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.menu li{
+    padding: 10px;
+    float: left;
+}
+
+.menu li a{
+    display: block;
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.mostrar {
+    height: 250px;
+    overflow: visible;
+}
+
+/*Titulo Cesta*/
+
+.CajaArriba{
+    width: 77%;
+    padding-left: 12%;
+    color: #707070;
+}
+
+.CajaArriba h4{
+    width: 100%;
+    font-size: 40px;
+    margin-top: 1%;
+}
+
+.CajaArriba p{
+    font-size: 20px;
+    margin-bottom: 2%;
+}
+
+/*Libros de la Cesta*/
+
+.CajaCompra{
+    width: 60%;
+    padding-left: 12%;
+    display: inline-block;
+}
+
+.CajaCompra .LibroLista{
+    height: 270px;
+    padding-top: 3%;
+    border-top:1px solid #707070;
+    color: #707070;
+    display: block;
+    font-size: 20px;
+}
+
+.CajaCompra .LibroLista h2{
+    width: 39%;
+    float: left;
+    margin-left: 4%;
+}
+
+.CajaCompra .LibroLista img{
+    width: 20%;
+    height: 200px;
+    float: left;
+    margin-left: 2%;
+}
+
+.CajaCompra .LibroLista .Autor{
+    width: 100%;
+    height: 65px;
+}
+
+.CajaCompra .LibroLista .Tipo{
+    width: 100%;
+    margin-left: 26%;
+}
+
+.CajaCompra .LibroLista .Stock{
+    width: 100%;
+    margin-left: 26%;
+}
+
+.CajaCompra .LibroLista input{
+    margin-left: 4%;
+}
+
+.CajaCompra .LibroLista label{
+    margin-right: 50%;
+}
+
+.CajaCompra .LibroLista select{
+    width: 12%;
+    margin-left: 4%;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.CajaCompra .LibroLista .Eliminar{
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.CajaCompra .LibroLista .Precio{
+    width: 14%;
+    font-size: 35px;
+    float: right;
+}
+
+.TotalCompra{
+    margin-bottom: 2%;
+    width: 100%;
+    float: right;
+}
+
+.TotalCompra p{
+    font-size: 25px;
+    color: #707070;
+    text-align: right;
+}
+
+.CajaTotal{
+    float: right;
+    width: 14%;
+    height: 290px;
+    border: 1px solid #707070;
+    margin-right: 12%;
+}
+
+.CajaTotal p{
+    margin-top: 3%;
+    font-size: 30px;
+    color: #707070;
+    text-align: center;
+}
+
+.CajaTotal input{
+    margin-left:3% ;
+    margin-top: 5%;
+}
+
+.CajaTotal label{
+    font-size:11px;
+}
+
+.CajaTotal .BotonTramitar{
+    background-color: #FFE374;
+    color: #756767;
+    font-weight: bold;
+    width: 80%;
+    height: 30px;
+    margin-top: 30%;
+    margin-left: 10%;
+
+}
+
+/*Pie de Pagina*/
+
+.PieDePagina{
+    margin-left:9% ;
+    width: 82%;
+    display: inline-flex;
+    border: 1px solid #707070;
+}
+
+.PieDePagina .logo{
+    border: 1px solid black;
+    color: #707070;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 10%;
+    height: 40px;
+    margin: 4%;
+}
+
+.PieDePagina .Lista{
+    text-align: center;
+    width: 50%;
+    margin:2%;
+    border-left:1px solid #707070;
+}
+
+
+@media (max-width:600px){
+
+    /*Encabezado*/
+ 
+    header{width: 100%;}
+ 
+    .BotonEntrar{display: none;}
+ 
+    .logo{width: 20%;}
+ 
+    .CajaDerecha{left: 20%;}
+
+    /*CajaArriba*/
+
+    .CajaArriba{
+        padding-left: 5%;
+    }
+
+    .CajaArriba h4{
+        font-size: 20px;
+    }
+
+    .CajaArriba p{
+        font-size: 12px;
+    }
+
+    .CajaCompra{
+        width: 70%;
+        padding-left: 4%;
+    }
+
+    .CajaCompra .LibroLista img{
+        height: 130px;
+        width: 30%;
+    }
+
+    .CajaCompra .LibroLista h2{
+        font-size: 20px;
+        width: 64%;
+        margin-left: 4%;
+    }
+
+    .CajaCompra .LibroLista .Autor{
+        font-size: 18px;
+        margin-left: 40%;
+        width: 69%;
+    }
+
+    .CajaCompra .LibroLista .Precio{
+        float: right;
+        width: 10%;
+        font-size: 20px;
+        margin-left:4% ;
+    }
+
+    .CajaCompra .LibroLista .Tipo{
+        margin-left: 40%;
+        margin-top:9%;
+    }
+    .CajaCompra .LibroLista .Stock{
+        margin-left: 40%;
+    }
+
+    .CajaCompra .LibroLista label{
+        margin-right: 25%;
+    }
+
+    .CajaCompra .LibroLista select{
+        width: 35%;
+    }
+
+    .CajaCompra .LibroLista a{
+        background-color: #FFA200;
+        color: #ffffff;
+        float: right;
+        width: 45%;
+        margin-bottom: 3%;
+        border: 1px solid #707070;
+    }
+
+    .CajaCompra .TotalCompra{
+        display: none;
+    }
+
+    .CajaTotal{
+        border-top:1px solid #707070;
+        width: 83%;
+        height: 185px;
+    }
+
+    .CajaTotal p{
+        font-size: 20px;
+    }
+    .CajaTotal .BotonTramitar{
+        margin-top: 10%;
+    }
+
+    
+ 
+    /*Pie de pagina*/
+ 
+  .PieDePagina{
+     width: 99%;
+     margin-left: 0px;
+    }
+ 
+ }
+ 

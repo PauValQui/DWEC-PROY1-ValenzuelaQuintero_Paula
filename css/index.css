@@ -1,0 +1,478 @@
+/*------------
+    Generico
+-------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* Encabezado */
+header{
+    width: 85%;
+    display:flex;
+    margin: 0 auto;
+   
+    background: linear-gradient(#FFA200, #EC9B0F);
+}
+
+.logo{
+    background: #ffffff;
+    border-radius: 50%;
+    width: 10%;
+    margin: 5px;
+}
+
+.logo a{
+    text-align: center;
+    padding-left: 35px;
+    text-decoration: none;
+}
+
+/*Boton Oscuro*/
+
+.BotonOscuro {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.BotonOscurobutton {
+    background: transparent;
+    color: white;
+    font-family: var(--letra);
+    margin-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding-right: 10px;
+    height: 30px;
+}
+
+.ModoOscuro {
+    background-color: rgb(59, 59, 73);
+    color: white;
+}
+
+.CajaDerecha{
+    display: flex;
+    position: relative;
+    left: 50%;
+    justify-content: space-between;
+    width: 22%;
+}
+
+.BtnBuscar{
+    margin-top: 7px;
+    width: 70px;
+    height: 35px;
+    background-color: #EBEBEB;
+    color: black;
+}
+
+.FotoCompra{
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+}
+
+.FotoCompra img{
+    width: 50px;
+    height: 40px;
+}
+
+.BotonEntrar{
+    margin-top: 7px;
+    width: 70px;
+    height: 35px;
+    background-color: #EBEBEB;
+    color: black;
+}
+
+.BotonEntrar p{
+    text-align: center;
+    margin-top: 5px;
+}
+
+.DespliegueMenu{
+    width: 45px;
+    height: 45px;
+    
+}
+
+.nav{
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+    font-size: 3em;
+}
+
+.nav, .menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}
+
+.menu{
+    background: #555;
+    width: 125px;
+    height: 0px;/*0 a 250px*/
+    float: right;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.menu li{
+    padding: 10px;
+    float: left;
+}
+
+.menu li a{
+    display: block;
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.mostrar {
+    height: 250px;
+    overflow: visible;
+}
+
+
+/*Novedades*/
+    .Novedades{
+        max-width: 1000px;
+        position:relative;
+        margin:auto;
+    }
+
+    .Imagenes{
+        display: none;
+    }
+
+    .Imagenes img{
+        border-radius: 10px;
+        max-width: 100%;
+        height: 300px;
+        width: 75%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:10px ;
+    }
+
+    .numbertext{
+        color:#f2f2f2;
+        font-size:12px;
+        padding:8px 12px;
+        position:absolute;
+        top:0;
+       }
+
+    /*.Novedades .BotonIzquierdo{
+        border: 1px solid black;
+        display: flex;
+        margin-top: 7%;
+        height: 30px;
+        position: relative;
+    }
+
+    .Novedades .BotonIzquierdo img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .Novedades .BotonDerecho{
+        border: 1px solid black;
+        float: right;
+        margin-top: 7%;
+        height: 30px;
+        position: relative;
+    }
+
+    .Novedades .BotonDerecho img{
+        width: 30px;
+        height: 30px;
+    }*/
+
+/*Ultimas Novedades*/
+
+.UltimasNovedades .TituloNovedades{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.UltimasNovedades .TituloNovedades h1{
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    color: #707070;
+    font-style: italic;
+    text-align: center;
+}
+
+/*El enlace que lleva a la pagina de la opcion de libro es el del
+    libro 4*/
+
+.UltimasNovedades .ContenedorLibros{
+    padding-right: 10%;
+    padding-left: 10%;
+    float: left;
+    display: block;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+.UltimasNovedades .ContenedorLibros .Libro{
+    margin-left: 5%;
+    width: 20%;
+    height: 410px;
+    float: left;
+    color: #707070;
+}
+
+.UltimasNovedades .ContenedorLibros .Libro .TituloLibro{
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    float: left;
+    text-decoration: none;
+    margin-bottom: 2%;
+}
+
+.UltimasNovedades .ContenedorLibros .Libro .AutorLibro{
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 5%;
+    float: left;
+    text-decoration: none;
+}
+
+.UltimasNovedades .ContenedorLibros .Libro .Categoria{
+    border:1px solid black;
+    font-size: 16px;
+    background-color: #EBEBEB;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 3%;
+    float: left;
+    text-decoration: none;
+}
+
+/*Ranking*/
+ 
+.RankingDelMes{
+    float: left;
+    padding-left: 10%;
+    width: 37%;
+    color: #707070;
+}
+
+.RankingDelMes h1{
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.RankingDelMes .LibroRanking{
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+
+.RankingDelMes .FotoRanking{
+    width: 25%;
+    height: 80%;
+    float: left;
+}
+
+.RankingDelMes .TituloRanking{
+    float: left;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    height: 57%;
+    text-decoration: none;
+    width: 45%;
+}
+
+.RankingDelMes .Editorial{
+    float: left;
+    font-size: 15px;
+    width: 45%;
+    margin-left: 10%;
+    color: #707070;
+    text-decoration: none;
+}
+
+.RankingDelMes .AutorRanking{
+    float: left;
+    font-size: 15px;
+    width: 45%;
+    margin-left: 10%;
+    color: #707070;
+    text-decoration: none;
+}
+
+/*Autores*/
+
+.AutoresMasSeguidos{
+    display: block;
+    float: right;
+    padding-right: 10%;
+    width: 37%;
+    color: #707070;
+}
+
+.AutoresMasSeguidos h1{
+    border-top: 1px solid #707070;
+    border-bottom: 1px solid #707070;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+.AutoresMasSeguidos .Autores{
+    width: 100%;
+    height: 150px;
+
+}
+
+.AutoresMasSeguidos .AutorSeguidos{
+    width: 22%;
+    height: 80%;
+    float: left;
+}   
+
+.AutoresMasSeguidos a{
+    font-size: 25px;
+    color: #707070;
+    width: 50%;
+    margin-top: 2%;;
+    margin-left: 10%;
+    text-decoration: none;
+    float: left;
+}
+
+/*Pie de Pagina*/
+
+.PieDePagina{
+    margin-left:9% ;
+    width: 82%;
+    display: inline-flex;
+    border: 1px solid #707070;
+}
+
+.PieDePagina .logo{
+    border: 1px solid black;
+    color: #707070;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 10%;
+    height: 40px;
+    margin: 4%;
+}
+
+.PieDePagina .Lista{
+    text-align: center;
+    width: 50%;
+    margin:2%;
+    border-left:1px solid #707070;
+    text-decoration: none;
+}
+
+
+/*En responsive 420x366 */
+
+@media (max-width: 600px){
+    
+    /*Encabezado*/
+
+    header{width: 100%;}
+
+    .BotonEntrar{display: none;}
+
+    .logo{width: 20%;}
+
+    .CajaDerecha{left: 20%;}
+
+    /*Novedades*/
+
+    .Novedades{
+        padding-left: 3%;
+    }
+
+    .Novedades .BotonIzquierdo{
+        margin-top: 16%;
+    }
+
+    .Novedades img{
+        height: 110px;
+        margin-top: 3%;
+    }
+
+    .Novedades .BotonDerecho{
+        margin-top: 16%;
+    }
+
+    /*Ultimas Novedades*/
+
+    .UltimasNovedades .ContenedorLibros .Libro{
+        width: 49%;
+        margin-left: 1%;
+        margin-bottom: 3%;
+    }
+
+    /*Ranking del mes*/
+
+    .RankingDelMes h1{
+        font-size: 15px;
+    }
+
+    .RankingDelMes .LibroRanking .FotoRanking{
+        width: 40%;
+    }
+
+    .RankingDelMes .LibroRanking .TituloRanking{
+        height: 48%;
+        font-size: 16px;
+    }
+
+    /*Autores mas seguidos*/
+
+    .AutoresMasSeguidos h1{
+        font-size: 15px;
+    }
+
+    .AutoresMasSeguidos .Autores .AutorSeguidos{
+        width: 50%;
+        height: 60%;
+    }
+
+    .AutoresMasSeguidos .Autores a{
+        font-size: 20px;
+        width: 40%;
+    }
+
+    /*Pie de pagina*/
+
+    .PieDePagina{
+        width: 99%;
+        margin-left: 0px;
+    }
+
+}

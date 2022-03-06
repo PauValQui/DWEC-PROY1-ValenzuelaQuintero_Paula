@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link rel="stylesheet" href="CSS/ApiBuscar.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Logo</a>
+        </div>
+        <div class="BotonOscuro">
+            <button class="BotonOscurobutton" id="BotonOscurobutton">Modo Oscuro</button>
+        </div>
+        <div class="CajaDerecha">
+            <button class="btnBuscar" id="btnBuscar" onclick="location.href='ApiBuscar.html'">Buscar</button>
+            <div class="FotoCompra">
+                <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
+            </div>
+            <button class="BotonEntrar" onclick="location.href='Registro.html'">Entrar</button>
+            <div class="DespliegueMenu">
+                <span class="nav" id="btnMenu"><i class="fas fa-bars"></i></span>
+                <ul class="menu" id="menu">
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Autor</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="Contacto.html">Atención al Cliente</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="Buscador">
+        <div id="content">
+            <input id="buscar-box" type="text" class="form-control" placeholder="Busca tu libro!...">
+            <button id="buscar" class="btn btn-primary" onclick="">Buscar</button>
+        </div>
+        
+        <div class="book-list" >
+            <h2 class="text-center">Resultados de la busqueda</h2>
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Link Libro</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaLibros">
+        
+                    </tbody>
+                </table>
+          </div>
+   
+    </section>
+
+    <footer class="PieDePagina">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        
+        <ul class="Lista">
+            <li><a>Aviso Legal</a></li>
+            <li><a>Condiciones de Uso</a></li>
+            <li><a>Protección de Datos</a></li>
+            <li><a>Uso de Cookies</a></li>
+        </ul>
+        
+        <ul class="Lista">
+            <li><a>Quienes somos</a></li>
+            <li><a>Grupo Editorial</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a>¿Eres librero?</a></li>
+        </ul>
+    </footer>
+   
+
+   <script src="js/api.js"></script>
+</body>
+</html>

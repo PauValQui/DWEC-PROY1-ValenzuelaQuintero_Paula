@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La chica de nieve</title>
+    <link rel="stylesheet" href="CSS/Vista.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Logo</a>
+        </div>
+        <div class="BotonOscuro"><button class="BotonOscurobutton" id="BotonOscurobutton">Modo Oscuro</button> </div>
+        <div class="CajaDerecha">
+            <div class="FotoCompra">
+                <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
+            </div>
+            <button class="BotonEntrar" onclick="location.href='Registro.html'">Entrar</button>
+            <div class="DespliegueMenu">
+                <span class="nav" id="btnMenu"><i class="fas fa-bars"></i></span>
+                <ul class="menu" id="menu">
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Autor</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="#">Atención al Cliente</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="ColumnaDerecha1">
+            <h1>La chica de nieve</h1>
+            <a class="Autor">Javier Castillo</a>
+            <div class="Categoria"><a>Novela Negra y Thriller</a></div>
+            <div class="Categoria"><a>Literatura Contemporanea</a></div>
+        </section>
+
+        <section class="ColumnaIzquierda">
+            <img src="img/Libro4.jpg" alt="FotoLibro" class="FotoLibro">
+            <input type="button" name="Añadir" class="Boton" value="Añadir a la lista de deseos">
+            <input type="button" name="LeerCapitulo" class="Boton" value="Leer el primer capitulo">
+        </section>
+
+        <section class="ColumnaDerecha2">
+            <p class="TSipnosis">Sipnosis</p>
+            <div class="Sipnosis">
+                <b>El thriller perfecto que cambia las reglas del género.
+
+                El desfile más famoso del planeta.
+                
+                Una niña de tres años desaparecida.
+                
+                ¿Dónde está Kiera Templeton?
+                </b><br>
+                <input type="button" value="--Ver Más--" id="BotonVermas" onclick="VerMas()">
+                <p id="Vermas">
+                    Nueva York, 1998, cabalgata de Acción de Gracias. Kiera Templeton, desaparece entre la multitud. Tras una búsqueda frenética por toda la ciudad, alguien encuentra unos mechones de pelo junto a la ropa que llevaba puesta la pequeña.
+                    En 2003, el día que Kiera habría cumplido ocho años, sus padres, Aaron y Grace Templeton, reciben en casa un extraño paquete: una cinta VHS con la grabación de un minuto de Kiera jugando en una habitación desconocida.
+                    Tras vender más de 650.000 ejemplares de sus anteriores novelas, Javier Castillo vuelve a poner en jaque la cordura conLa chica de nieve,un oscuro viaje a las profundidades de Miren Triggs, una estudiante de periodismo que inicia una investigación paralela y descubre que tanto su vida como la de Kiera están llenas de incógnitas.
+                </p>
+            </div>
+            
+            <h3>Comprar en:</h3>
+            <div class="CajaCompra">
+                <div class="TipoCompra">
+                    <p><b>Ebook</b></p>
+                    <p>7,99€</p>
+                </div>
+                <div class="TipoCompra">
+                    <p><b>Tapa Dura</b></p>
+                    <p>18,90€</p>
+                </div>
+                <div class="TipoCompra">
+                    <p><b>AudioLibro</b></p>
+                    <p>14,99€</p>
+                </div>
+            </div>
+
+            <div id="CajaReseña">
+                <div class="Reseña">
+                    <p>Las Reseñas de los Lectores</p>
+                </div>
+
+                <div class="ContenedorIntroducir">
+                    <label>Introduce el titulo:</label>
+                    <input type="text" placeholder="Titulo" id="tituloIntroducido"><br>
+                    <label> Introduce tu nombre de usuario:</label>
+                    <input type="text" placeholder="Nombre de usuario" id="nombreIntroducido"><br>
+                    <label>Introduce el texto de la reseña:</label>
+                    <input type="textarea" placeholder="Texto reseña" id="reseñaIntroducida"><br>
+                    <button type="button" class="btnIntroducirReseña" onclick="introduceReseña()">Enviar</button>
+                </div>
+
+                <div class="ContenedorReseñas">
+                    <img src="img/FondoUsuario.JPG" alt="FondoUsuario" class="FondoUsuario">
+                <p class="TituloReseña">Intrigante desde el primer dia</p>
+                <p class="AutorReseña">Pepe Sanchez</p>
+                <p class="TextoReseña">Muy intrigante. Engancha desde el principio, lo recomiendo muchisimo. Impaciente por la segunda parte</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="PieDePagina">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        
+        <ul class="Lista">
+            <li><a>Aviso Legal</a></li>
+            <li><a>Condiciones de Uso</a></li>
+            <li><a>Protección de Datos</a></li>
+            <li><a>Uso de Cookies</a></li>
+        </ul>
+        
+        <ul class="Lista">
+            <li><a>Quienes somos</a></li>
+            <li><a>Grupo Editorial</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a>¿Eres librero?</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/vista.js"></script>
+</body>
+</html>

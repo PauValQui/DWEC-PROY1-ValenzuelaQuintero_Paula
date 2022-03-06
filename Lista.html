@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesta</title>
+    <link rel="stylesheet" href="CSS/Lista.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Logo</a>
+        </div>
+        <div class="BotonOscuro"><button class="BotonOscurobutton" id="BotonOscurobutton">Modo oscuro</button> </div>
+        <div class="CajaDerecha">
+            <div class="FotoCompra">
+                <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
+            </div>
+            <button class="BotonEntrar" onclick="location.href='Registro.html'">Entrar</button>
+            <div class="DespliegueMenu">
+                <span class="nav" id="btnMenu"><i class="fas fa-bars"></i></span>
+                <ul class="menu" id="menu">
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Autor</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="Contacto.html">Atención al Cliente</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="CajaArriba">
+            <h4>Cesta</h4>
+            <p>Comprueba tus articulos y realiza la compra</p>
+        </section>
+
+        <section class="CajaCompra">
+            <section class="LibroLista" id="LibroLista1">
+                <img src="img/Libro4.jpg" alt="FotoLibro">
+                <h2>La chica de nieve</h2><p class="Autor">por Javier Castillo</p>
+                <p class="Precio">18.90€</p>
+                <p class="Tipo">Tapa Blanda</p>
+                <p class="Stock">Stock</p>
+                <input type="checkbox">
+                <label>¿Es un regalo?</label>
+                <select>
+                    <option value="1">Cantidad: 1</option>
+                    <option value="2">Cantidad: 2</option>
+                    <option value="3">Cantidad: 3</option>
+                </select>
+                <input type="submit" class="Eliminar" name="Eliminar" value="Eliminar" onclick="eliminar(1)"> 
+            </section>
+
+            <section class="LibroLista" id="LibroLista2">
+                <img src="img/Libro3.jpg" alt="FotoLibro">
+                <h2>La mansión. Tiempo de tormenta</h2><p class="Autor">por Anne Jacobs</p>
+                <p class="Precio">8.99€</p>
+                <p class="Tipo">Ebook</p>
+                <p class="Stock">Stock</p>
+                <input type="checkbox">
+                <label>¿Es un regalo?</label>
+                <select>
+                    <option value="1">Cantidad: 1</option>
+                    <option value="2">Cantidad: 2</option>
+                    <option value="3">Cantidad: 3</option>
+                </select>
+                <input type="submit" class="Eliminar" name="Eliminar" value="Eliminar" onclick="eliminar(2)">
+            </section>
+
+            <section class="LibroLista" id="LibroLista3">
+                <img src="img/Libro5.jpg" alt="FotoLibro">
+                <h2>La buena suerte</h2><p class="Autor">por Rosa Montero</p>
+                <p class="Precio">14.99€</p>
+                <p class="Tipo">AudioLibro</p>
+                <p class="Stock">Stock</p>
+                <input type="checkbox">
+                <label>¿Es un regalo?</label>
+                <select>
+                    <option value="1">Cantidad: 1</option>
+                    <option value="2">Cantidad: 2</option>
+                    <option value="3">Cantidad: 3</option>
+                </select>
+                <input type="submit" class="Eliminar" name="Eliminar" value="Eliminar" onclick="eliminar(3)">                
+            </section>
+
+            <section class="TotalCompra">
+                <p>Total (Cantidad de productos): 42.79€</p>
+            </section>
+        </section>
+
+        <section class="CajaTotal">
+            <p>Total (Cantidad de productos): 42.79€</p>
+            <input type="checkbox">
+            <label>Este pedido tiene un regalo</label>
+            <input type="button" value="Tramitar Pedido" name="TramitarPedido" class="BotonTramitar" >
+        </section>
+    </main>
+
+    <footer class="PieDePagina">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        
+        <ul class="Lista">
+            <li><a>Aviso Legal</a></li>
+            <li><a>Condiciones de Uso</a></li>
+            <li><a>Protección de Datos</a></li>
+            <li><a>Uso de Cookies</a></li>
+        </ul>
+        
+        <ul class="Lista">
+            <li><a>Quienes somos</a></li>
+            <li><a>Grupo Editorial</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a>¿Eres librero?</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/Lista.js"></script>
+</body>
+</html>

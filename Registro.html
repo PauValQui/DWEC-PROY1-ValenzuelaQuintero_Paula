@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/Registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Logo</a>
+        </div>
+        <div class="BotonOscuro"><button class="BotonOscurobutton" id="BotonOscurobutton">Modo oscuro</button> </div>
+        <div class="CajaDerecha">
+            <div class="FotoCompra">
+                <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
+            </div>
+            <button class="BotonEntrar" onclick="location.href='Registro.html'">Entrar</button>
+            <div class="DespliegueMenu">
+                <span class="nav" id="btnMenu"><i class="fas fa-bars"></i></span>
+                <ul class="menu" id="menu">
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Autor</a></li>
+                    <li><a href="#">Editorial</a></li>
+                    <li><a href="#">Empresa</a></li>
+                    <li><a href="Contacto.html">Atención al Cliente</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="IniciaSesion">
+            <form class="FormularioInicio">
+                <h1>Inicia Sesion</h1>
+                <div>
+                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                        <input type="text" name="Email" class="Email" placeholder="Email" tabindex="3" minlength="4" maxlength="40"  required pattern="[A-Za-z0-9]+"><br>
+                    </div>
+                    <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+                
+                <div>
+                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                        <input type="password" name="Contraseña" class="Contraseña" placeholder="Contraseña" tabindex="4" ><br>
+                    </div>
+                    <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                </div>
+                <div class="formulario__grupo formulario_grupo-btn-enviar">
+                    <button type="submit" class="formulario_btn">Enviar</button>
+                </div>
+            </form>
+        </section>
+        <section class="Registrarse">
+            <form class="FormularioRegistro">
+                <h1>Registrate</h1>
+                <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                    <input type="text" placeholder="Nombre" name="Nombre" class="Nombre" tabindex="1"><br>
+                </div>
+                <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                    <input type="text" placeholder="Apellidos" class="Apellido" tabindex="2" ><br>
+                </div>
+                <div>
+                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                        <input type="email" name="Email" class="Email" placeholder="Email" tabindex="3" ><br>
+                    </div>
+                    <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+                <div>
+                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                        <input type="password" name="Contraseña" class="Contraseña" placeholder="Contraseña" tabindex="4" ><br>
+                    </div>
+                    <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                </div>
+                <div>
+                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
+                        <input type="password" name="RepiteContraseña" class="RepiteContraseña" placeholder="Repite la Contraseña" tabindex="5" ><br>
+                    </div>
+                    <p class="formulario_input-error">Las contraseñas deben ser iguales</p>
+                </div>
+                <div class="formulario_grupo" id="grupo_terminos">
+                    <label class="formulario_label">
+                        <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Terminos y Condiciones
+                    </label>
+                </div>
+    
+                <div class="formulario_mensaje" id="formulario_mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                </div>
+    
+                <div class="formulario_grupo formulario_grupo-btn-enviar">
+                    <button type="submit" class="formulario_btn">Enviar</button>
+                    <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">Formulario enviado exitosamente!</p>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="PieDePagina">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        
+        <ul class="Lista">
+            <li><a>Aviso Legal</a></li>
+            <li><a>Condiciones de Uso</a></li>
+            <li><a>Protección de Datos</a></li>
+            <li><a>Uso de Cookies</a></li>
+        </ul>
+        
+        <ul class="Lista">
+            <li><a>Quienes somos</a></li>
+            <li><a>Grupo Editorial</a></li>
+            <li><a href="Contacto.html">Contáctanos</a></li>
+            <li><a>¿Eres librero?</a></li>
+        </ul>
+    </footer>
+    <script src="js/registro.js"></script>
+</body>
+</html>
