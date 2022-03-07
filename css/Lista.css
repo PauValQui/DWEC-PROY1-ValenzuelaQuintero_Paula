@@ -58,9 +58,17 @@ header{
 .CajaDerecha{
     display: flex;
     position: relative;
-    left: 50%;
+    left: 43%;
     justify-content: space-between;
-    width: 22%;
+    width: 30%;
+}
+
+.btnBuscar{
+    margin-top: 7px;
+    width: 70px;
+    height: 35px;
+    background-color: #EBEBEB;
+    color: black;
 }
 
 .FotoCompra{

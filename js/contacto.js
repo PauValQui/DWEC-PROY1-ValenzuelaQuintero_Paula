@@ -32,65 +32,73 @@ const expresiones = {
         apellidos:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,// Letras y espacios, pueden llevar acentos.
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ //correo@correo.com
     }
-/*Creo las variables que voy a utilizar */
+/*Objeto campos para comprobar si se han validado todos los campos del formulario */
+const campos = {
+    nombre:false,
+    apellidos:false,
+    email:false
+}
 
-let nombre = document.getElementsByClassName("Nombre");
-let apellido = document.getElementsByClassName("Apellido");
-let email = document.getElementsByClassName("Email");
 
-        
-/*Validar Nombre */
-        
-function validaNombre(){
-    if(nombre==""){
-        nombre.nextElementSibling.style.display="block";
-    }else{
-        if(!nombre.match(expresiones.nombre)){
-            nombre.nextElementSibling.style.display="block";
-        }else{
-            return true;
-        }
+/*Valido el formulario cogiendo el valor de name en el que estemos*/
+const validarFormulario = (e) => {
+    switch(e.target.name){
+        case "Nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre')
+            /*Mando a validarCampo la expresion para validar, el input en el que estamos para coger su valor
+            y un string con el nombre para buscar dependiendo del campo */
+        break;
+        case "Apellido":
+            validarCampo(expresiones.apellidos, e.target, 'apellido')
+        break;
+        case "Email":
+            validarCampo(expresiones.email, e.target, 'email')
+        break;
     }
 }
-        
-/*Validar Apellido */
-        
-function validaApellido(){
-    if(apellido==""){
-        apellido.nextElementSibling.style.display="block";
+
+const validarCampo = (expresion, input, campo) => {
+    /*Compruebo si no es valido el input mandado y si no es valido muestra el mensaje de error */
+    if(!expresion.test(input.value)){
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add('formulario_input-error-activo')
     }else{
-        if(!apellido.match(expresiones.apellido)){
-            apellido.nextElementSibling.style.display="block";
-        }else{
-            return true;
-        }
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove('formulario_input-error-activo')
+        //Cuando sea valido cambio el campo a true
+        campos[campo] = true;
     }
 }
-        
-/*Validar Email*/
-        
-function validaEmail(){
-    if(email==""){
-        email.nextElementSibling.style.display="block";
-    }else{
-        if(!email.match(expresiones.email)){
-            email.nextElementSibling.style.display="block";
-        }else{
-            return true;
-        }
+
+
+const formulario= document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');/* Cojo en un array todos los inputs del formulario*/
+
+inputs.forEach((input) => {
+    //Recorro todos los inputs y valido cuando se suelta una tecla o cuando salimos del foco
+    input.addEventListener('keyup', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
+})
+
+formulario.addEventListener('submit', (evento)=>{
+    evento.preventDefault();
+    /*Compruebo que todo este true para confirmar y resetear el formulario */
+    if( campos.nombre && campos.apellidos && campos.email && comprobarCaptcha()){
+        alert("Gracias por tus comentarios.");
+        formulario.reset();
     }
-}
+})
 
 /*Captcha*/
 
-let text, x, y, z;
+let text;
+let x;
+let y;
 
 function Captcha(){
     x= Math.floor((Math.random() * 10));
     y= Math.floor((Math.random() * 10));
 
     text = `${x} + ${y}`;
-    document.getElementsById('Captcha').value = text;
+    document.getElementsById("Captcha").value = text;
 }
 
 function comprobarCaptcha(){
@@ -101,15 +109,3 @@ function comprobarCaptcha(){
     }
 }
 
-/*Comprobar y resetear formulario */
-
-let formulario= document.getElementsById('formulario');
-
-formulario.addEventListener('click', (e)=>{
-    e.preventDefault();
-
-    if(validaNombre() && validaEmail() && validaApellido() && comprobarCaptcha()){
-        alert("Gracias por tus comentarios.");
-        formulario.reset();
-    }
-})

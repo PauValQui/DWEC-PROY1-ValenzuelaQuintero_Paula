@@ -16,6 +16,7 @@
         </div>
         <div class="BotonOscuro"><button class="BotonOscurobutton" id="BotonOscurobutton">Modo oscuro</button> </div>
         <div class="CajaDerecha">
+            <button class="btnBuscar" id="btnBuscar" onclick="location.href='ApiBuscar.html'">Buscar</button>
             <div class="FotoCompra">
                 <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
             </div>
@@ -40,14 +41,14 @@
                 <h1>Inicia Sesion</h1>
                 <div>
                     <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                        <input type="text" name="Email" class="Email" placeholder="Email" tabindex="3" minlength="4" maxlength="40"  required pattern="[A-Za-z0-9]+"><br>
+                        <input type="text" name="Email" id="EmailRegistrado" placeholder="Email" tabindex="3" minlength="4" maxlength="40"  required pattern="[A-Za-z0-9]+"><br>
                     </div>
                     <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
                 
                 <div>
                     <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                        <input type="password" name="Contraseña" class="Contraseña" placeholder="Contraseña" tabindex="4" ><br>
+                        <input type="password" name="Contraseña" id="ContraseñaRegistrada" placeholder="Contraseña" tabindex="4" ><br>
                     </div>
                     <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
                 </div>
@@ -56,42 +57,41 @@
                 </div>
             </form>
         </section>
-        <section class="Registrarse">
-            <form class="FormularioRegistro">
+        <section id="Registrarse">
+            <form id="FormularioRegistro">
                 <h1>Registrate</h1>
-                <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                    <input type="text" placeholder="Nombre" name="Nombre" class="Nombre" tabindex="1"><br>
+                <div class="formulario_grupo-input id="grupo_nombre"">
+                    <input type="text" placeholder="Nombre" name="Nombre" id="Nombre" tabindex="1"><br>
                 </div>
-                <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                    <input type="text" placeholder="Apellidos" class="Apellido" tabindex="2" ><br>
-                </div>
-                <div>
-                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                        <input type="email" name="Email" class="Email" placeholder="Email" tabindex="3" ><br>
-                    </div>
-                    <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                <div class="formulario_grupo-input id="grupo_apellidos">
+                    <input type="text" placeholder="Apellidos" name="Apellidos" id="Apellido" tabindex="2" ><br>
                 </div>
                 <div>
-                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                        <input type="password" name="Contraseña" class="Contraseña" placeholder="Contraseña" tabindex="4" ><br>
+                    <div class="formulario_grupo-input id="grupo_email">
+                        <input type="email" name="Email" id="Email" placeholder="Email" tabindex="3" ><br>
+                        <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                     </div>
-                    <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                    
                 </div>
                 <div>
-                    <div class="formulario_grupo-input formulario_grupo-input-incorrecto">
-                        <input type="password" name="RepiteContraseña" class="RepiteContraseña" placeholder="Repite la Contraseña" tabindex="5" ><br>
+                    <div class="formulario_grupo-input id="grupo_contraseña">
+                        <input type="password" name="Contraseña" id="Contraseña" placeholder="Contraseña" tabindex="4" ><br>
+                        <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
                     </div>
-                    <p class="formulario_input-error">Las contraseñas deben ser iguales</p>
+                    
+                </div>
+                <div>
+                    <div class="formulario_grupo-input id="grupo_repitecontraseña">
+                        <input type="password" name="RepiteContraseña" id="RepiteContraseña" placeholder="Repite la Contraseña" tabindex="5" ><br>
+                        <p class="formulario_input-error">Las contraseñas deben ser iguales</p>
+                    </div>
+                    
                 </div>
                 <div class="formulario_grupo" id="grupo_terminos">
                     <label class="formulario_label">
                         <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos">
                         Acepto los Terminos y Condiciones
                     </label>
-                </div>
-    
-                <div class="formulario_mensaje" id="formulario_mensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                 </div>
     
                 <div class="formulario_grupo formulario_grupo-btn-enviar">
@@ -103,7 +103,7 @@
     </main>
     <footer class="PieDePagina">
         <div class="logo">
-            <p>Logo</p>
+            <a href="index.html">Logo</a>
         </div>
         
         <ul class="Lista">

@@ -35,91 +35,84 @@ const expresiones = {
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ //correo@correo.com
 }
 
-/*Creo las variables que voy a utilizar */
+/*Objeto campos para comprobar si se han validado todos los campos del formulario */
+const campos = {
+    nombre:false,
+    apellidos:false,
+	contraseña:false,
+    email:false
+}
 
-let registro = document.getElementsByClass("Registrarse");
-let nombre = document.getElementsByClassName("Nombre");
-let apellido = document.getElementsByClassName("Apellido");
-let email = document.getElementsByClassName("Email");
-let contraseña = document.getElementsByClassName("Contraseña");
-let repiteContraseña = document.getElementsByClassName("RepiteContraseña");
-let terminos = document.getElementById("terminos");
+
+/*Valido el formulario cogiendo el valor de name en el que estemos*/
+const validarFormulario = (e) => {
+    switch(e.target.name){
+        case "Nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre')
+            /*Mando a validarCampo la expresion para validar, el input en el que estamos para coger su valor
+            y un string con el nombre para buscar dependiendo del campo */
+        break;
+        case "Apellidos":
+            validarCampo(expresiones.apellidos, e.target, 'apellidos')
+        break;
+        case "Email":
+            validarCampo(expresiones.email, e.target, 'email')
+        break;
+		case "Contraseña":
+            validarCampo(expresiones.email, e.target, 'contraseña')
+        break;
+		case "RepiteContraseña":
+            validarContraseña2();
+        break;
+    }
+}
+
+const validarCampo = (expresion, input, campo) => {
+    /*Compruebo si no es valido el input mandado y si no es valido muestra el mensaje de error */
+    if(!expresion.test(input.value)){
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add('formulario_input-error-activo')
+		campos [campo] = false;
+    }else{
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove('formulario_input-error-activo')
+        //Cuando sea valido cambio el campo a true
+        campos[campo] = true;
+    }
+}
+
+const validarContraseña2 = () =>{
+	const inputcontraseña1 = document.getElementById('Contraseña')
+	const inputcontraseña2 = document.getElementById('RepiteContraseña')
+
+	if(inputcontraseña1.value !== inputcontraseña2.value){
+		document.querySelector(`#grupo_repitecontraseña .formulario__input-error`).classList.add('formulario_input-error-activo')
+		campos['contraseña'] = false;
+	}else{
+		document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove('formulario_input-error-activo')
+		//Cuando sea valido cambio el campo a true
+        campos['contraseña'] = true;
+        
+	}
+}
+
+const registro = document.getElementById("FormularioRegistro");
+const inputs = document.querySelectorAll('#FormularioRegistro input');/* Cojo en un array todos los inputs del formulario*/
+
+inputs.forEach((input) => {
+    //Recorro todos los inputs y valido cuando se suelta una tecla o cuando salimos del foco
+    input.addEventListener('keyup', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
+})
 
 /*Llamar al evento*/
 
 registro.addEventListener('submit', (e) =>{
 	e.preventDefault();
-
-	if(!validaNombre() && !validaApellido() && !validaEmail() && !validaContraseña && !validaRepetirContraseña() && !terminos.checked){
-		document.getElementsById('formulario_mensaje').style.display="block";
-	}else{
-		registro.reset()
-	}
+	const terminos = document.getElementById('terminos')
+    /*Compruebo que todo este true para confirmar y resetear el formulario */
+	if( campos.nombre && campos.apellidos && campos.email && campos.contraseña && terminos.checked) {
+        alert("Gracias por tus comentarios.");
+        formulario.reset();
+    }
 });
 
-/*Validar Nombre */
 
-function validaNombre(){
-	if(nombre.value==""){
-		nombre.nextElementSibling.style.display="block";
-	}else{
-		if(!nombre.match(expresiones.nombre)){
-			nombre.nextElementSibling.style.display="block";
-		}else{
-			return true;
-		}
-	}
-}
-
-/*Validar Apellido */
-
-function validaApellido(){
-	if(apellido.value==""){
-		apellido.nextElementSibling.style.display="block";
-	}else{
-		if(!apellido.match(expresiones.apellido)){
-			apellido.nextElementSibling.style.display="block";
-		}else{
-			return true;
-		}
-	}
-}
-
-/*Validar Email*/
-
-function validaEmail(){
-	if(email.value==""){
-		email.nextElementSibling.style.display="block";
-	}else{
-		if(!email.match(expresiones.email)){
-			email.nextElementSibling.style.display="block";
-		}else{
-			return true;
-		}
-	}
-}
-
-/*Validar Contraseña */
-
-function validaContraseña(){
-	if(contraseña.value==""){
-		contraseña.nextElementSibling.style.display="block";
-	}else{
-		if(!contraseña.match(expresiones.contraseña)){
-			contraseña.nextElementSibling.style.display="block";
-		}else{
-			return true;
-		}
-	}
-}
-
-
-/*Validar Repetir Contraseña */
-
-function validaRepetirContraseña(){
-	if (repiteContraseña.value != contraseña.value) {
-		repiteContraseña.nextElementSibling.style.display="block";
-	}else{
-		return true;
-	}
-}

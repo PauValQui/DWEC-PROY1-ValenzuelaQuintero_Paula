@@ -15,6 +15,7 @@
         </div>
         <div class="BotonOscuro"><button class="BotonOscurobutton" id="BotonOscurobutton">Modo oscuro</button> </div>
         <div class="CajaDerecha">
+            <button class="btnBuscar" id="btnBuscar" onclick="location.href='ApiBuscar.html'">Buscar</button>
             <div class="FotoCompra">
                 <a href="Lista.html"><img alt="FotoCompra" src="img/CestaCompra.jpg"></a>
             </div>
@@ -32,30 +33,33 @@
         </div>
     </header>
 
-    <main onload="Captcha()">
+    <main>
         <form id="formulario">
             <div class="formulario_grupo" id="grupo_nombre">
                 <div class="formulario_grupo-input">
                     <h3>Nombre:</h3>
-                    <input type="text" placeholder="Nombre" name="Nombre" class="Nombre" tabindex="1" onblur="validaNombre()"><br>
+                    <input type="text" placeholder="Nombre" name="Nombre" id="Nombre" tabindex="1"><br>
+                    <p class="formulario_input-error">El nombre tiene que ser mayor de 2 dígitos y solo puede contener letras</p>
                 </div>
-				<p class="formulario_input-error">El nombre tiene que ser mayor de 2 dígitos y solo puede contener letras</p>
+				
             </div>
             
             <div class="formulario_grupo" id="grupo_apellido">
                 <div class="formulario_grupo-input">
                     <h3>Apellido:</h3>
-                    <input type="text" placeholder="Apellido" name="Apellido" class="Apellido" tabindex="2" onblur="validaApellido()"><br>
+                    <input type="text" placeholder="Apellido" name="Apellido" id="Apellido" tabindex="2" ><br>
+                    <p class="formulario_input-error">El apellido tiene que ser mayor de 4 dígitos y solo puede contener letras</p>
                 </div>
-				<p class="formulario_input-error">El apellido tiene que ser mayor de 4 dígitos y solo puede contener letras</p>
+				
             </div>
             
             <div class="formulario_grupo" id="grupo_email">
                 <div class="formulario_grupo-input">
                     <h3>Email:</h3>
-                    <input type="text" placeholder="Email" name="Email" class="Email" tabindex="3" onblur="validaEmail()"><br>
+                    <input type="text" placeholder="Email" name="Email" id="Email" tabindex="3"><br>
+                    <p class="formulario_input-error">El email solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
-				<p class="formulario_input-error">El email solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+				
             </div>
             
             <div class="formulario_grupo" id="grupo_textArea"> 
@@ -72,9 +76,14 @@
                 <h3>Captcha:</h3>
                 <input type="text" id="Captcha" disabled>
                 <input type="text" id="textoCaptcha" placeholder="Escribe el captcha" tabindex="5">
+                <button id="btn-generar" onclick="Captcha()">Generar Captcha</button>
             </div>
 
-            <button type="submit" class="formulario_btn">Enviar</button>
+            <div class="formulario_grupo" id="grupo_btn-enviar"> 
+                <button type="submit" class="formulario_btn">Enviar</button>
+            </div>
+
+            
         </form>
     </main>
 

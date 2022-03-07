@@ -36,16 +36,3 @@ function VerMas(){
 }
 
 
-/* Introduce Reseña */
-function introduceReseña(){
-    const titulo = document.getElementById('tituloIntroducido').value;
-    const usuario = document.getElementById('nombreIntroducido').value;
-    const texto = document.getElementById('reseñaIntroducida').value;
-    
-    var div = document.createElement('div');
-    var p = document.createElement('p');
-
-    p.innerHTML = titulo;
-    div.innerHTML = p;
-    document.querySelector('CajaReseña').insertAdjacentHTML(div);
-}

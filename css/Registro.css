@@ -53,9 +53,17 @@ header{
 .CajaDerecha{
     display: flex;
     position: relative;
-    left: 50%;
+    left: 43%;
     justify-content: space-between;
-    width: 22%;
+    width: 30%;
+}
+
+.btnBuscar{
+    margin-top: 7px;
+    width: 70px;
+    height: 35px;
+    background-color: #EBEBEB;
+    color: black;
 }
 
 .FotoCompra{
@@ -184,25 +192,25 @@ main{
     border: 1px solid #707070;
 }
 
-.Registrarse{
+#Registrarse{
     width: 50%;
     height: 500px;
     margin-left: 5%;
 }
 
-.Registrarse .FormularioRegistro{
+#Registrarse .FormularioRegistro{
     width: 100%;
     height: 25%;
 }
 
-.Registrarse h1{
+#Registrarse h1{
     font-size: 25px;
     margin-top: 5%;
     margin-left: 15%;
     margin-bottom: 5%;
 }
 
-.Registrarse .formulario_grupo-input{
+#Registrarse .formulario_grupo-input{
     width: 45%;
     height: 45px;
     float: left;
@@ -210,7 +218,7 @@ main{
     margin-bottom: 3%;
 }
 
-.Registrarse .formulario_grupo-input input{
+#Registrarse .formulario_grupo-input input{
     height: 25px;
     width: 250px;
 }
@@ -223,6 +231,11 @@ main{
 
 .formulario_input-error{
     display: none;
+}
+
+.formulario_input-error-activo{
+    display: block;
+    margin-left: 3%;
 }
 
 #formulario_grupo-terminos, 
